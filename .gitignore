@@ -1,2 +1,10 @@
 Flags.txt
 Logistics/*
+N2-ghost-in-the-wire/organizer/_manifest.json
+N2-ghost-in-the-wire/organizer/_artifact_envelope.bin
+N2-ghost-in-the-wire/organizer/flag_config.json
+.env
+.DS_Store
+*.swp
+*/__pycache__/
+*.pyc
