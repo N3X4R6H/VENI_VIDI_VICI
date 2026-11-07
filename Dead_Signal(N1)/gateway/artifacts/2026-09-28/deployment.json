@@ -1,0 +1,12 @@
+{
+  "environment": "development",
+  "deployment_id": "MRS-DEV-042",
+  "services": [
+    "portal",
+    "research-api"
+  ],
+  "verification": {
+    "smoke_test": "passed",
+    "token": "VVVFLAG{cf45a1382453e2f7c25acc0927ff24ecd7b394ace85b7434a0f6e7c30f2daa57}"
+  }
+}

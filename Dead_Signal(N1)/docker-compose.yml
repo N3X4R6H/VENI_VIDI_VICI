@@ -1,0 +1,44 @@
+services:
+  gateway:
+    build:
+      context: ./gateway
+    container_name: n1-gateway
+    ports:
+      - "8080:80"
+      - "8443:443"
+    networks:
+      - public
+      - internal
+    depends_on:
+      - research-api
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+
+  research-api:
+    build:
+      context: ./research-api
+    container_name: n1-research-api
+    expose:
+      - "8080"
+    networks:
+      - internal
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+networks:
+  public:
+    driver: bridge
+
+  internal:
+    driver: bridge
+    internal: true

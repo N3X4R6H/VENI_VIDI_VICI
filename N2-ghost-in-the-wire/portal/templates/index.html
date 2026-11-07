@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N2 — Ghost in the Wire | PARSEC VVV</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="badge">N2</span>
+    <span class="title">Ghost in the Wire</span>
+  </div>
+  <div class="meta">
+    <span class="chip">Network Security</span>
+    <span class="chip">Intermediate</span>
+    <span class="chip">PARSEC · IIT Dharwad</span>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Incident Briefing</h2>
+    <p>
+      <strong>Asterion Research Systems</strong> recently detected unusual outbound
+      network activity originating from its internal research network. Monitoring
+      systems recorded repeated DNS queries to an unfamiliar external domain.
+      Around the same time, an internal research repository registered an
+      unexpected access event.
+    </p>
+    <p>
+      The security team suspects a compromised workstation transferred
+      confidential research material outside the organization. The endpoint
+      investigation was interrupted before the workstation could be isolated,
+      but several pieces of evidence were preserved.
+    </p>
+    <p class="ref">
+      Incident reference: <code>ARS-2026-041</code> &nbsp;|&nbsp;
+      All timestamps in the evidence are <strong>IST (UTC+05:30)</strong>.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Objectives</h2>
+    <ol class="objectives">
+      <li>Identify the workstation responsible for the suspicious activity.</li>
+      <li>Determine which network mechanism was abused.</li>
+      <li>Reconstruct the information transferred outside the organization.</li>
+      <li>Submit both recovered flags.</li>
+    </ol>
+    <p class="note">
+      Two flags are hidden in this challenge. Submit each on the competition
+      platform.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Evidence Files</h2>
+    <p>Download all four evidence sources and correlate them.</p>
+    <div class="grid">
+      <a class="dl" href="/evidence/network_capture.pcap">
+        <span class="dl-name">network_capture.pcap</span>
+        <span class="dl-desc">Packet capture of the network segment during the incident.</span>
+        <span class="dl-type">application/vnd.tcpdump.pcap</span>
+      </a>
+      <a class="dl" href="/evidence/dns_resolver.log">
+        <span class="dl-name">dns_resolver.log</span>
+        <span class="dl-desc">Internal DNS resolver query log for the incident window.</span>
+        <span class="dl-type">text/plain</span>
+      </a>
+      <a class="dl" href="/evidence/dhcp_leases.csv">
+        <span class="dl-name">dhcp_leases.csv</span>
+        <span class="dl-desc">DHCP lease history for the internal research subnet.</span>
+        <span class="dl-type">text/csv</span>
+      </a>
+      <a class="dl" href="/evidence/repository_audit.log">
+        <span class="dl-name">repository_audit.log</span>
+        <span class="dl-desc">Research repository access audit log.</span>
+        <span class="dl-type">text/plain</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Submission</h2>
+    <p>
+      Submit your flags on the competition platform. Each flag has the form
+      <code>VVVFLAG{...}</code>.
+    </p>
+    <p>
+      <a class="btn" href="{{CTFD_URL}}">Open submission platform →</a>
+    </p>
+    <p class="note">
+      Flag&nbsp;1 is recovered by attributing the suspicious traffic to a
+      workstation's hardware address. Flag&nbsp;2 is embedded inside the
+      recovered artifact — reconstruct the transferred data to reveal it.
+    </p>
+  </section>
+
+  <section class="card hints">
+    <h2>Progressive Hints</h2>
+    <details><summary>H1</summary><p>An incident timeline is often more useful than examining every packet individually. Start by understanding when the unusual activity occurred.</p></details>
+    <details><summary>H2</summary><p>DNS traffic is not limited to ordinary hostname lookups. Pay attention to the structure of the requested names.</p></details>
+    <details><summary>H3</summary><p>A suspicious source IP is only an address. Can you establish which device was using it at the time?</p></details>
+    <details><summary>H4</summary><p>DNS query names can contain more information than the destination domain itself. Examine the labels carefully.</p></details>
+    <details><summary>H5</summary><p>The captured data appears to have been divided into multiple pieces. Reconstruct the original sequence before attempting to decode it.</p></details>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>N2 — Ghost in the Wire · Network Security · Intermediate</span>
+  <span>PARSEC · IIT Dharwad · Veni Vidi Vici (VVV)</span>
+</footer>
+</body>
+</html>

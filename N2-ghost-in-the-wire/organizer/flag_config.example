@@ -1,0 +1,57 @@
+# N2 - GHOST IN THE WIRE - flag configuration template
+#
+# flag_config.json is NOT written by hand; generate_evidence.py is the single
+# source of truth for every deterministic constant in the challenge and writes
+# flag_config.json with the authoritative values. This example documents the
+# expected schema for the CTFd platform configuration and for anyone who needs
+# to transcribe the flags manually.
+#
+# After running:  python3 organizer/generate_evidence.py
+# the real file appears at:  organizer/flag_config.json
+#
+# Schema:
+#
+# {
+#   "challenge": "N2",
+#   "name": "GHOST IN THE WIRE",
+#   "incident_ref": "ARS-2026-041",
+#   "flag1": {
+#     "objective": "Source attribution (compromised workstation MAC)",
+#     "mac": "<lowercase colon-separated MAC>",
+#     "mac_format": "lowercase hexadecimal, colon-separated",
+#     "value": "VVVFLAG{<mac>}"
+#   },
+#   "flag2": {
+#     "objective": "Payload recovery (exfiltrated artifact)",
+#     "artifact_id": "<id>",
+#     "artifact_repo_path": "<repo path>",
+#     "artifact_envelope_sha256": "<sha256 of full envelope>",
+#     "content_sha256": "<sha256 of content section>",
+#     "envelope_size": <int, bytes>,
+#     "value": "VVVFLAG{<token>}"
+#   },
+#   "encoding": {
+#     "scheme": "Base64URL (RFC 4648 URL-safe), padding stripped",
+#     "chunk_label_size": 48,
+#     "sequence_label": "segNNN (3-digit, zero-padded)",
+#     "qname_template": "segNNN.<chunk>.sync.ghostwire.test",
+#     "control_queries": ["init", "ping", "done"],
+#     "num_segments": <int>,
+#     "b64url_len": <int>
+#   },
+#   "network": {
+#     "compromised_ip": "10.40.2.17",
+#     "compromised_mac": "<mac>",
+#     "compromised_prior_mac": "<prior mac>",
+#     "compromised_host": "ARS-WS-RES-07",
+#     "dns_resolver_ip": "10.40.0.53",
+#     "repo_ip": "10.40.1.20",
+#     "exfil_domain": "sync.ghostwire.test"
+#   },
+#   "timezone": "Asia/Kolkata (UTC+05:30); PCAP stores Unix epoch seconds",
+#   "seed": 20261028
+# }
+#
+# The companion organizer/_manifest.json (also generated) carries the full DNS
+# event list, background packets, the MAC map, and dns_resolver_ip, so that
+# generate_capture.py can build the pcap without importing any module.

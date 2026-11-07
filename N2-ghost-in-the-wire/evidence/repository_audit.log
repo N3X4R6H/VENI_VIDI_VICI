@@ -1,0 +1,21 @@
+# Asterion Research Systems - Research Repository Audit Log
+# Host: ars-repo-01 (10.40.1.20)
+# Incident reference: ARS-2026-041
+# All timestamps in IST (Asia/Kolkata, UTC+05:30)
+# Fields: timestamp client_ip user resource operation status size_bytes
+2026-10-28T09:22:03+05:30 10.40.2.34 res12 research/public/weekly-status.md clone 200 77199
+2026-10-28T09:44:11+05:30 10.40.2.34 res12 research/public/roadmap-2026.md clone 200 72784
+2026-10-28T10:05:53+05:30 10.40.2.21 fin03 ops/runbooks/deploy-repo.md read 200 12777
+2026-10-28T10:28:03+05:30 10.40.2.21 fin03 finance/budget-2026q4.csv read 200 10203
+2026-10-28T10:50:05+05:30 10.40.2.41 res09 research/public/weekly-status.md read 200 21087
+2026-10-28T11:11:44+05:30 10.40.2.34 res12 ops/runbooks/deploy-repo.md clone 200 1329
+2026-10-28T11:33:44+05:30 10.40.2.34 res12 research/public/weekly-status.md clone 200 27774
+2026-10-28T11:55:44+05:30 10.40.2.62 dev02 ops/runbooks/deploy-repo.md clone 200 55969
+2026-10-28T12:18:04+05:30 10.40.2.34 res12 research/public/roadmap-2026.md clone 200 66901
+2026-10-28T12:40:03+05:30 10.40.2.21 fin03 research/public/weekly-status.md list 200 2643
+2026-10-28T13:01:45+05:30 10.40.2.62 dev02 ops/runbooks/deploy-repo.md list 200 2294
+2026-10-28T13:24:01+05:30 10.40.2.41 res09 research/public/roadmap-2026.md read 200 6403
+2026-10-28T13:45:55+05:30 10.40.2.21 fin03 research/public/chimera-overview.md read 200 35912
+2026-10-28T14:02:17+05:30 10.40.2.17 res07 research/chimera/chimera_phase2_briefing.md export 200 1194
+2026-10-28T14:03:02+05:30 10.40.2.34 res12 research/public/roadmap-2026.md read 200 4321
+2026-10-28T14:07:42+05:30 10.40.2.41 res09 research/public/weekly-status.md clone 200 89629

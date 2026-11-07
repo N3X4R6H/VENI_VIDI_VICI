@@ -1,0 +1,317 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+
+% ---------- Theme ----------
+\definecolor{VVVNavy}{HTML}{101C2C}
+\definecolor{VVVCyan}{HTML}{00B8C8}
+\definecolor{VVVLight}{HTML}{EAF7F8}
+\definecolor{VVVGray}{HTML}{536171}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=VVVNavy,
+    urlcolor=VVVCyan,
+    pdftitle={Veni Vidi Vici - Event Details},
+    pdfauthor={Coding Club, IIT Dharwad}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.25}
+
+% ---------- Headings ----------
+\titleformat{\section}
+  {\Large\bfseries\color{VVVNavy}}
+  {\thesection.}{0.55em}{}
+  [\vspace{2pt}\color{VVVCyan}\titlerule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{VVVNavy}}
+  {}{0pt}{}
+
+% ---------- Header and footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textcolor{VVVGray}{PARSEC 7.0 -- Indian Institute of Technology Dharwad}}
+\rhead{\small\textcolor{VVVGray}{VENI VIDI VICI}}
+\cfoot{\small\textcolor{VVVGray}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{VVVCyan}\leaders\hrule height \headrulewidth\hfill}}
+
+% ---------- Helpers ----------
+\newcommand{\domain}[2]{%
+    \subsection*{#1}
+    #2
+}
+\newcommand{\placeholder}[1]{\textcolor{red}{[#1]}}
+
+\begin{document}
+
+% ===================== COVER / TITLE =====================
+\begin{center}
+    {\large\bfseries\color{VVVGray} PARSEC 7.0 -- ANNUAL TECHNICAL FESTIVAL}\\[3pt]
+    {\large\bfseries\color{VVVGray} INDIAN INSTITUTE OF TECHNOLOGY DHARWAD}\\[22pt]
+
+    {\Huge\bfseries\color{VVVNavy} VENI VIDI VICI}\\[7pt]
+    {\Large\bfseries\color{VVVCyan} Think Like an Attacker. Reason Like a Defender.}\\[16pt]
+
+    \colorbox{VVVLight}{%
+        \parbox{0.88\textwidth}{%
+            \centering
+            \vspace{7pt}
+            \textbf{CYBERSECURITY CAPTURE THE FLAG COMPETITION}\\
+            Organized by: \textbf{Coding Club, IIT Dharwad}
+            \vspace{7pt}
+        }%
+    }
+\end{center}
+
+\vspace{10pt}
+
+\section{Introduction}
+
+PARSEC, the annual technical festival of the Indian Institute of Technology Dharwad,
+brings together students, innovators, and technology enthusiasts to explore emerging
+technologies and demonstrate their technical abilities.
+
+As part of PARSEC 7.0, \textbf{The Systems Wing} of the Coding Club, Indian Institute of Technology Dharwad, proudly presents
+\textbf{Veni Vidi Vici}, a cybersecurity Capture The Flag (CTF) competition designed
+to challenge participants across multiple domains of information security.
+
+\textbf{Veni Vidi Vici} aims to go beyond conventional cybersecurity competitions by
+introducing participants to \textbf{realistic attack scenarios}, \textbf{carefully designed vulnerable
+environments}, and \textbf{multi-stage challenges} that demand analytical thinking, technical
+proficiency, and creative problem-solving.
+
+The competition follows a scenario-driven approach, \textbf{encouraging participants to
+think like attackers while understanding the underlying principles of defensive
+security.} From network investigations and application vulnerabilities to cloud
+misconfigurations, cryptographic weaknesses, and emerging AI security threats,
+participants will encounter challenges inspired by real-world cybersecurity incidents.
+
+Through an immersive and hands-on experience, \textbf{Veni Vidi Vici} aspires to foster
+practical cybersecurity skills, encourage security research, and create an environment
+where students can explore the evolving landscape of digital security.
+
+\section{About the Organizers}
+
+The Systems Wing of the Coding Club of IIT Dharwad is a student-driven technical community dedicated
+to promoting systems programming, software development, hardware integrations, embedded systems
+and emerging areas of computer
+science through collaborative learning, technical projects, workshops, and competitive
+events.
+
+The wing actively encourages students to explore domains such as:
+\begin{itemize}
+    \item Systems programming and low-level computing.
+    \item Artificial intelligence and machine learning.
+    \item Cybersecurity and information security.
+    \item Hardware and embedded systems based integrations.
+    \item Distributed systems, cloud computing, and networking.
+\end{itemize}
+
+Through Veni Vidi Vici, the club seeks to extend its technical initiatives into practical
+cybersecurity education by providing participants with an opportunity to engage with
+realistic security problems in a controlled environment.
+
+\section{Proposed Event Structure}
+
+\subsection*{Veni Vidi Vici: Capture The Flag Competition}
+
+The competition will feature a collection of carefully curated cybersecurity challenges
+distributed across six major domains.
+
+The proposed challenge architecture consists of \textbf{12 primary challenge
+environments}, with approximately \textbf{24--30 flags} distributed across different
+stages of investigation and exploitation.
+
+Challenges will be organized across three progressive difficulty levels:
+\begin{itemize}
+    \item \textbf{Foundation:} Fundamental cybersecurity concepts and introductory
+    problem-solving.
+    \item \textbf{Intermediate:} Multi-step investigations requiring practical technical
+    knowledge.
+    \item \textbf{Advanced:} Complex attack scenarios requiring deeper analysis,
+    exploitation, and lateral reasoning.
+\end{itemize}
+
+\subsection*{Challenge Domains}
+
+\domain{1. Network Security}{
+Challenges involving packet analysis, network reconnaissance, traffic investigation,
+protocol vulnerabilities, and digital forensics.
+}
+
+\domain{2. Application Security}{
+Exploration of common web application vulnerabilities, authentication weaknesses,
+insecure APIs, injection attacks, and access-control failures.
+}
+
+\domain{3. Cloud Security}{
+Challenges involving cloud infrastructure misconfigurations, identity and access
+management, exposed resources, and security weaknesses in cloud environments.
+}
+
+\domain{4. System Security and Privilege Escalation}{
+Investigation of vulnerable systems, permission misconfigurations, privilege escalation
+techniques, and operating-system security.
+}
+
+\domain{5. Applied Cryptography}{
+Problems involving cryptographic implementation weaknesses, encryption and encoding
+mechanisms, cryptanalysis, and secure communication.
+}
+
+\domain{6. AI Systems Security}{
+Exploration of emerging vulnerabilities in AI-powered systems, including prompt
+injection, insecure agent interactions, and weaknesses in AI-integrated applications.
+}
+
+\subsection*{Challenge Design Philosophy}
+
+The competition emphasizes realistic, scenario-driven challenges rather than isolated
+technical exercises.
+
+Participants will encounter interconnected investigation stages that may involve:
+\begin{itemize}
+    \item Reconnaissance and information gathering.
+    \item Initial access and vulnerability identification.
+    \item Enumeration and forensic investigation.
+    \item Credential discovery and exploitation.
+    \item Privilege escalation and lateral movement.
+    \item Achievement of the final objective.
+\end{itemize}
+
+The challenge environments will be sandboxed and designed to provide a controlled
+setting for practical cybersecurity experimentation.
+
+\subsection*{Technical Resources and Learning Opportunities}
+
+Alongside the competition, Veni Vidi Vici will feature \textbf{learning resources} aimed at
+introducing participants to selected cybersecurity domains.
+
+These resources will aim to:
+\begin{itemize}
+    \item Introduce fundamental concepts in different cybersecurity domains.
+    \item Familiarize participants with commonly used security tools.
+    \item Bridge the gap between theoretical understanding and hands-on cybersecurity
+    practice.
+\end{itemize}
+
+The resources will be designed to accommodate participants with varying levels of
+prior experience.
+
+\section{Collaboration and Industry Involvement}
+
+We invite organizations, cybersecurity companies, security researchers, and industry
+professionals to collaborate with Veni Vidi Vici and contribute to the development
+of practical cybersecurity education at IIT Dharwad.
+
+Possible forms of collaboration include:
+\begin{itemize}
+    \item \textbf{Challenge Partnerships:} Contributing real-world security scenarios,
+    vulnerabilities, or problem statements that can be adapted into competition
+    challenges.
+    \item \textbf{Technical Mentorship:} Providing cybersecurity professionals and
+    researchers to mentor participants and guide technical sessions.
+    \item \textbf{Knowledge Partnerships:} Collaborating on workshops, demonstrations,
+    and discussions covering emerging areas of cybersecurity.
+    \item \textbf{Judging and Evaluation:} Participating in the evaluation of challenges,
+    technical presentations, and competition outcomes.
+    \item \textbf{Infrastructure Partnerships:} Supporting the event through cybersecurity
+    platforms, cloud infrastructure, software licenses, and technical resources.
+    \item \textbf{Prize and Sponsorship Partnerships:} Supporting participant incentives,
+    awards, and event execution.
+\end{itemize}
+
+Industry participation will provide organizations with an opportunity to engage with
+technically motivated students, demonstrate their expertise, and contribute to
+strengthening the cybersecurity ecosystem.
+
+We also welcome opportunities to adapt industry-relevant security scenarios into
+educational challenge environments, ensuring that participants gain exposure to
+problems inspired by practical security research and professional workflows.
+
+\section{Tentative Timeline}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.23\textwidth}
+                              >{\Centering\arraybackslash}p{0.22\textwidth}
+                              >{\RaggedRight\arraybackslash}X}
+\toprule
+\textbf{Phase} & \textbf{Tentative Dates} & \textbf{Description}\\
+\midrule
+Event Announcement & \placeholder{19th December, 2026} &
+Announcement of Veni Vidi Vici and opening of registrations.\\
+
+Registration & \placeholder{20th December, 2026 -- 24th January, 2027} &
+Participant registration and team formation.\\
+
+
+Release of CTF Materials & \placeholder{20th January, 2027} &
+Release of competition relevant materials, literature and resources.\\
+
+Competition Launch & \placeholder{25th January, 2027} &
+Commencement of the CTF competition and release of challenges.\\
+
+Competition Conclusion & \placeholder{27th January, 2027} &
+Closure of the competition and final evaluation.\\
+
+Results and Awards & \placeholder{29th January, 2027} &
+Announcement of results and recognition of winning participants.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textit{The final schedule and competition format will be announced closer to the event.}
+
+\section{Event Vision}
+
+Veni Vidi Vici aspires to create more than a conventional cybersecurity competition.
+It seeks to establish an environment where curiosity meets practical security research,
+where theoretical knowledge is tested against realistic challenges, and where
+participants develop the ability to understand and reason about complex security
+problems.
+
+By bringing together students, cybersecurity professionals, and industry organizations,
+the event aims to promote awareness of emerging security threats, encourage technical
+exploration, and nurture the next generation of cybersecurity practitioners.
+
+We warmly welcome organizations and professionals working in cybersecurity,
+information security, cloud security, application security, and related domains to
+collaborate with us in making Veni Vidi Vici a meaningful technical experience.
+
+\section*{Contact Details}
+
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+\textbf{Ankush Tarafdar} & \textbf{PARSEC Organizing Team}\\
+Event Lead -- Veni Vidi Vici & \textbf{Website:} \url{https://parsec.iitdh.ac.in}\\
+Email: \href{mailto:mc25bt011@iitdh.ac.in}{mc25bt011@iitdh.ac.in} & Email: \href{mailto:events.parsec@iitdh.ac.in}{events.parsec@iitdh.ac.in}\\
+\end{tabularx}
+
+\vfill
+\begin{center}
+    {\color{VVVCyan}\rule{0.75\textwidth}{1pt}}\\[5pt]
+    {\large\bfseries\color{VVVNavy} PARSEC 7.0 -- IIT DHARWAD}\\
+    {\small Indian Institute of Technology Dharwad}
+\end{center}
+
+\end{document}

@@ -1,0 +1,78 @@
+# N2 - GHOST IN THE WIRE
+# Docker Compose: evidence portal + optional gateway reverse proxy.
+#
+# Usage:
+#   cp .env.example .env       # then edit CTFD_URL / PUBLIC_PORT if desired
+#   docker compose build
+#   docker compose up
+#   open http://localhost:${PUBLIC_PORT:-8080}
+#
+# The gateway service is OPTIONAL: if the shared VVV public gateway already
+# fronts N2, set N2_GATEWAY_ENABLED=0 and point that gateway directly at
+# portal:8080 (or the published port).
+
+services:
+  portal:
+    build:
+      context: .
+      dockerfile: portal/Dockerfile
+    image: n2-ghost-in-the-wire-portal:latest
+    container_name: n2-portal
+    restart: unless-stopped
+    # Evidence is baked into the image; this read-only mount keeps the same
+    # files authoritative if you regenerate them on the host.
+    volumes:
+      - ./evidence:/app/evidence:ro
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+      - EVIDENCE_DIR=/app/evidence
+      - CTFD_URL=${CTFD_URL:-}
+    expose:
+      - "8080"
+    # No host ports published by the portal itself; the gateway (or the shared
+    # VVV gateway) publishes the single public port.
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 128M
+        reservations:
+          cpus: "0.10"
+          memory: 32M
+    networks:
+      - n2net
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  gateway:
+    profiles: ["gateway"]
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    image: n2-ghost-in-the-wire-gateway:latest
+    container_name: n2-gateway
+    restart: unless-stopped
+    ports:
+      - "${PUBLIC_PORT:-8080}:8080"
+    depends_on:
+      - portal
+    deploy:
+      resources:
+        limits:
+          cpus: "0.30"
+          memory: 64M
+        reservations:
+          cpus: "0.05"
+          memory: 16M
+    networks:
+      - n2net
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  n2net:
+    driver: bridge

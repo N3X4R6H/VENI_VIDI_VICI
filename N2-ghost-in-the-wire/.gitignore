@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Generated evidence + organizer artifacts (regenerate with the scripts).
+# Keep evidence/ checked in for the portal image, but ignore the organizer
+# ground-truth binaries that are reproducible.
+organizer/_manifest.json
+organizer/_artifact_envelope.bin
+organizer/flag_config.json
+
+# Local env
+.env
+
+# Editor / OS
+.DS_Store
+*.swp

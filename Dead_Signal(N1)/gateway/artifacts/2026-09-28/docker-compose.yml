@@ -1,0 +1,8 @@
+services:
+  portal:
+    image: meridian/portal:dev
+
+  research-api:
+    image: meridian/research-api:dev
+    expose:
+      - "8080"
